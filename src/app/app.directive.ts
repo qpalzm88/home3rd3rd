@@ -9,15 +9,15 @@ export class AppDirective {
 
   @HostListener('focus', ['$event.target'])
    onFocus(input): void {
-    this.moveCarriage(input);
+    this.setCusor(input);
   }
  
   @HostListener('click', ['$event.target']) 
   onClick(input): void {
-    this.moveCarriage(input);
+    this.setCusor(input);
   }
 
-  moveCarriage(input: any) {
+  setCusor(input: any) {
     const str = input.value;
     const index = str.search('_');
     if(index >= 0){
